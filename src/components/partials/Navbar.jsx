@@ -1,6 +1,8 @@
 import React from 'react'
 import { navItems } from '../../utils/constants/navItems';
 import { Link } from 'react-router-dom';
+import { TextInput } from '@mantine/core';
+import { Search, ShoppingCart, User } from 'lucide-react';
 
 const Navbar = () => {
   return (
@@ -15,19 +17,31 @@ const Navbar = () => {
         ))}
       </section>
 
-      <section class='flex space-x-4'>
+      <section class='flex space-x-4 items-center'>
         <div>
-            <input 
-            type="text" 
-            placeholder='Search Products' 
-            class='border border-black rounded-xl px-2'
-            />
+          <TextInput
+            placeholder="Search Products"
+            radius={30}
+            rightSection={<Search size={16} />}
+          />
         </div>
-        <div>
+        <div class='flex space-x-1 items-center'>
+          <div>
+            <User size={16} strokeWidth={3} />
+          </div>
+          <div class='font-bold'>
             Account
+          </div>
+          
         </div>
-        <div>
+        <div class='flex space-x-1 items-center'>
+          <div>
+            <ShoppingCart size={16} strokeWidth={3} />
+          </div>
+          <div class='font-bold'>
             Cart
+          </div>
+
         </div>
       </section>
     </main>
