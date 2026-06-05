@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 
 const HomeLayout = () => {
   return (
-    <main>
+    <main class='dynamic-x-padding'>
         <header>
             <Navbar />
         </header>

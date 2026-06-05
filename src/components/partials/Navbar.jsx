@@ -1,17 +1,19 @@
 import React from 'react'
 import { navItems } from '../../utils/constants/navItems';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { TextInput } from '@mantine/core';
 import { Search, ShoppingCart, User } from 'lucide-react';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <main class='flex justify-between py-4 dynamic-x-padding'>
-      <section>LOGO</section>
+      <section onClick={() => navigate('/')} class='cursor-pointer'>LOGO</section>
 
       <section class='space-x-4'>
         {navItems.map((item, index) => (
-          <Link key={index} href={item.path}>
+          <Link key={index} to={item.path}>
             {item.name}
           </Link>
         ))}
